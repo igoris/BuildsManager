@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>{{project.title}} builds</title>
+</head>
+<body>
+<h2>{{project.title}}</h2>
+
+{% if builds_list %}
+
+    {% for build in builds_list %}
+        <div><b> {{build}} </b> — {{build.pub_date}}</div>
+        <div> {{build.description }} </div> 
+        <div> <a href="{{build.url}}">Install</a></div>
+        <br/><br/>
+    {% endfor %}
+
+{% else %}
+    <p>No builds are available.</p>
+{% endif %} 
+
+</body>
+</html>
